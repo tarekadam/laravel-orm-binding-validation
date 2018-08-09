@@ -1,0 +1,38 @@
+{
+    "name": "tarek-adam/laravel-orm-binding-validation",
+    "description": "Validates parent child ORM.",
+    "keywords": [
+        "laravel",
+        "package"
+    ],
+    "type": "laravel",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Tarek Adam",
+            "email": "tarek@fuqu.io"
+        }
+    ],
+    "minimum-stability": "dev",
+    "autoload": {
+        "psr-4": {
+            "TarekAdam\\OrmBindingValidation\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "FuquIo\\Test\\": "tests/"
+        }
+    },
+    "require": {},
+    "require-dev": {
+        "graham-campbell/testbench": "^5.0@dev"
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "TarekAdam\\OrmBindingValidation\\ServiceProvider"
+            ]
+        }
+    }
+}
