@@ -24,8 +24,14 @@ class Middleware{
 		$controller = $request->route()->controller;
 		$params = $request->route()->parameters;
 
+		$relationship_found = false;
+
 		foreach($controller->parent_child_relationships as $parent_child_relationship){
 			$parent = $parent_child_relationship['parent'];
+			if(empty($params[$parent])){
+				continue;
+			}
+
 			$parent = $params[$parent];
 
 			$child = $parent_child_relationship['child'];
@@ -36,6 +42,12 @@ class Middleware{
 			if(!$parent->$relationship->contains($child)){
 				abort(404);
 			}
+
+			$relationship_found = true;
+		}
+
+		if(!$relationship_found){
+			abort(404);
 		}
 
 		return $next($request);
