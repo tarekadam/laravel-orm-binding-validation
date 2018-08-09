@@ -7,11 +7,9 @@ use Illuminate\Routing\Router;
 
 /**
  * Class ServiceProvider
- * @package FuquIo\LaravelCors
+ * @package TarekAdam\OrmBindingValidation
  */
 class ServiceProvider extends BaseServiceProvider{
-	CONST VENDOR_PATH = 'tarek-adam/laravel-orm-binding-validation';
-	CONST SHORT_NAME = 'binding-validation';
 
 	/**
 	 * Bootstrap the application services.
@@ -22,7 +20,7 @@ class ServiceProvider extends BaseServiceProvider{
 	 */
 	public function boot(Router $router){
 
-		$this->bootMiddleware($router);
+		$router->aliasMiddleware('orm', Middleware::class);
 
 	}
 
@@ -35,13 +33,4 @@ class ServiceProvider extends BaseServiceProvider{
 
 	}
 
-
-	/**
-	 * @internal
-	 *
-	 * @param Router $router
-	 */
-	private function bootMiddleware(Router $router){
-		$router->aliasMiddleware('orm', Middleware::class);
-	}
 }
