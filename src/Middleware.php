@@ -22,7 +22,7 @@ class Middleware{
 		//
 
 		$controller = $request->route()->controller;
-		$params = $request->route()->parameters;
+		$params     = $request->route()->parameters;
 
 		$relationship_found = false;
 
