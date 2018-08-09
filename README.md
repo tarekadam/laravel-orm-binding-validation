@@ -1,4 +1,4 @@
-Example route: http://fullcontact.test/fuqu/banks/1/display/bank-accounts/5/edit
+Example route: http://localhost/banks/1/display/bank-accounts/5/edit
 
 
 ```
