@@ -7,7 +7,7 @@ use Closure;
 
 /**
  * Class Middleware
- * @package FuquIo\LaravelCors
+ * @package TarekAdam\OrmBindingValidation
  */
 class Middleware{
 	/**
