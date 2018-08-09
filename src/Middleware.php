@@ -39,11 +39,9 @@ class Middleware{
 
 			$relationship = $parent_child_relationship['relationship'];
 
-			if(!$parent->$relationship->contains($child)){
-				abort(404);
+			if($parent->$relationship->contains($child)){
+				$relationship_found = true;
 			}
-
-			$relationship_found = true;
 		}
 
 		if(!$relationship_found){
