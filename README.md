@@ -1,3 +1,6 @@
+Example route: http://fullcontact.test/fuqu/banks/1/display/bank-accounts/5/edit
+
+
 ```
 class BankAccountController extends Controller{
 
@@ -7,7 +10,7 @@ class BankAccountController extends Controller{
 
 	public function __construct(){
 		$this->middleware('orm')
-		     ->only(['store', 'edit', 'update', 'destroy']);
+		     ->only(['edit', 'update', 'destroy']);
 	}
 
 	//...
